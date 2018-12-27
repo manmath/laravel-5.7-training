@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Exceptions;
+namespace STEPITAcademy\HRManagement\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

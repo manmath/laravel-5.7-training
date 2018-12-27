@@ -1,9 +1,8 @@
 <?php
+namespace STEPITAcademy\HRManagement\Http\Controllers\Auth;
 
-namespace App\Http\Controllers\Auth;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use STEPITAcademy\HRManagement\Http\Controllers\Controller;
 
 class VerificationController extends Controller
 {

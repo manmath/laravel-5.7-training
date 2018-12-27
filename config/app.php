@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        STEPITAcademy\HRManagement\Providers\AppServiceProvider::class,
+        STEPITAcademy\HRManagement\Providers\AuthServiceProvider::class,
+        // STEPITAcademy\HRManagement\Providers\BroadcastServiceProvider::class,
+        STEPITAcademy\HRManagement\Providers\EventServiceProvider::class,
+        STEPITAcademy\HRManagement\Providers\RouteServiceProvider::class,
 
     ],
 

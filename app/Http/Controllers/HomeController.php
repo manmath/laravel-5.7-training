@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace STEPITAcademy\HRManagement\Http\Controllers;
 
 use Illuminate\Http\Request;
 

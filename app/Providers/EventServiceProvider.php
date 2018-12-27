@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Providers;
+namespace STEPITAcademy\HRManagement\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;

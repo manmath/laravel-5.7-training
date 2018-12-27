@@ -1,6 +1,5 @@
 <?php
-
-namespace App;
+namespace STEPITAcademy\HRManagement\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

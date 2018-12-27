@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "stepitacademy/hr-management",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "HR Management System.",
     "keywords": [
         "framework",
         "laravel"
@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "STEPITAcademy\\HRManagement\\": "app/"
         },
         "classmap": [
             "database/seeds",

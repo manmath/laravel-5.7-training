@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Http\Middleware;
+namespace STEPITAcademy\HRManagement\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 
