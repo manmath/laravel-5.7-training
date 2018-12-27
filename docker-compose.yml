@@ -1,0 +1,39 @@
+version: "3.1"
+
+services:
+  laravel_db:
+    container_name: laravel_training_db
+    image: mysql:5.7
+    command:
+    - --character-set-server=utf8mb4
+    - --collation-server=utf8mb4_unicode_ci
+    environment:
+    - MYSQL_DATABASE=hr_management
+    - MYSQL_USER=hr_management
+    - MYSQL_PASSWORD=hr_managementDBPWD
+    - MYSQL_ROOT_PASSWORD=root
+    ports:
+    - "3307:3306"
+
+  laravel_web:
+    container_name: laravel_training_web
+    image: docker.web-essentials.asia:5000/manmath-docker-apache2:0.0.2
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - laravel_db
+    volumes:
+      - ./docker:/docker
+      - ./docker/apache2/vhost.conf:/etc/apache2/sites-available/000-default.conf:ro
+      - .:/var/www/html
+    environment:
+      - USER_ID=1001
+      - GROUP_ID=1001
+    command: "sh /docker/scripts/web.sh"
+
+  laravel_mail:
+    container_name: laravel_training_mail
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
