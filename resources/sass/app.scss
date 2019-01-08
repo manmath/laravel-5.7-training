@@ -1,14 +1,23 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
+
+// Mixins
+@import 'mixins';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Components
+@import 'components/layout';
+@import 'components/sidebar';
+@import 'components/header';
+@import 'components/card';
+@import 'components/alert';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/nav';
+@import 'components/navbar';
+@import 'components/utilities';
+@import 'components/avatars';
+@import 'components/switches';
+@import 'components/reboot';
