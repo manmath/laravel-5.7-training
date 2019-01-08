@@ -3,9 +3,9 @@ namespace STEPITAcademy\HRManagement\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use STEPITAcademy\HRManagement\Models\Department;
+use STEPITAcademy\HRManagement\Models\Role;
 
-class DepartmentController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::all();
-        return view('department.index', ['departments' => $departments]);
+        $roles = Role::all();
+        return view('role.index', ['roles' => $roles]);
     }
 
     /**
@@ -25,27 +25,27 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('department.create');
+        return view('role.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:departments'
+            'name' => 'required|unique:roles'
         ]);
-        Department::create([
+        Role::create([
             'name' => $request->get('name')
         ]);
 
-        Session::flash('success', 'Department created successfully.');
-        return redirect()->route('department.index');
+        Session::flash('success', 'Role created successfully.');
+        return redirect()->route('role.index');
     }
 
     /**
@@ -56,36 +56,36 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        $department = Department::find($id);
-        return view('department.edit', ['department' => $department]);
+        $role = Role::find($id);
+        return view('role.edit', ['role' => $role]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $department = Department::find($id);
-        $department->name = $request->get('name');
-        $department->save();
-        Session::flash('success', 'Department is updated successfully.');
-        return redirect(route('department.index'));
+        $role = Role::find($id);
+        $role->name = $request->get('name');
+        $role->save();
+        Session::flash('success', 'Role is updated successfully.');
+        return redirect()->route('role.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Department::destroy($id);
-        Session::flash('warning', 'Department is deleted successfully.');
-        return redirect()->route('department.index');
+        Role::destroy($id);
+        Session::flash('warning', 'Role is deleted successfully.');
+        return redirect()->route('role.index');
     }
 }
