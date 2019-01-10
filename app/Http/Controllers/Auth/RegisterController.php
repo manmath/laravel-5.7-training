@@ -2,8 +2,10 @@
 namespace STEPITAcademy\HRManagement\Http\Controllers\Auth;
 
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
 use STEPITAcademy\HRManagement\Http\Controllers\Controller;
 use STEPITAcademy\HRManagement\Models\User;
 
@@ -27,17 +29,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/user';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('guest');
+//    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -67,5 +69,15 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 }

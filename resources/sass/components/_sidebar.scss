@@ -45,6 +45,7 @@
 
     &:hover {
       color: $sidebar-nav-link-hover-color;
+      background-color: $sidebar-nav-link-hover-bg-color;
 
       i {
         color: $sidebar-nav-icon-hover-color;
@@ -53,6 +54,7 @@
 
     &.active {
       color: $sidebar-nav-link-active-color;
+      background-color: $sidebar-nav-link-hover-bg-color;
 
       i {
         color: $sidebar-nav-icon-active-color;
@@ -71,7 +73,7 @@
     font-size: $small-font-size;
     text-transform: uppercase;
     padding: $sidebar-nav-title-padding-y $sidebar-nav-title-padding-x;
-    color: darken($sidebar-nav-title-color, 30%);
+    color: $sidebar-nav-title-color;
   }
 
   .nav-dropdown.open {

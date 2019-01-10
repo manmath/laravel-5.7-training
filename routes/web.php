@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/department', 'DepartmentController');
 Route::resource('/role', 'RoleController');
+
+Route::prefix('user')->group(function () {
+    Route::get('/', 'UserController@index')->name('user.index');
+    Route::get('/create', 'UserController@create')->name('user.create');
+});

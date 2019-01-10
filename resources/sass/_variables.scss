@@ -11,7 +11,7 @@ $gray-800: #575757 !default;
 $gray-900: #4d4d4d !default;
 $black: #444 !default;
 
-$blue: #42a5f5 !default;
+$blue: #5BB0E3 !default;
 $indigo: #3F51B5 !default;
 $purple: #9C27B0 !default;
 $pink: #E91E63 !default;
@@ -88,21 +88,19 @@ $header-bg: #fff;
  * Sidebar
  */
 $sidebar-width: 240px;
-$sidebar-bg: #272727;
-
+$sidebar-bg: $blue;
 $sidebar-nav-link-padding-x: 24px;
 $sidebar-nav-link-padding-y: 16px;
-$sidebar-nav-link-color: lighten($black, 35%);
-$sidebar-nav-link-hover-bg-color: lighten($blue, 15%);
-$sidebar-nav-link-hover-color: lighten($black, 60%);
-$sidebar-nav-icon-color: lighten($black, 50%);
-$sidebar-nav-icon-hover-color: #fff;
+$sidebar-nav-link-color: $white;
+$sidebar-nav-link-hover-bg-color: $white;
+$sidebar-nav-link-hover-color: $blue;
+$sidebar-nav-icon-color: $white;
+$sidebar-nav-icon-hover-color: $blue;
 $sidebar-nav-icon-active-color: $blue;
-$sidebar-nav-link-active-color: #fff;
-
+$sidebar-nav-link-active-color: $blue;
 $sidebar-nav-title-padding-x: 1rem;
 $sidebar-nav-title-padding-y: 0.8rem;
-$sidebar-nav-title-color: lighten($black, 50%);
+$sidebar-nav-title-color: $gray-100;
 
 /**
  * Content
