@@ -2,7 +2,10 @@
 /node_modules
 /public/hot
 /public/storage
+/public/uploads/*
 /storage/*.key
 /vendor/
 npm-debug.log
 yarn-error.log
+
+!/public/uploads/.gitkeep
