@@ -31,10 +31,15 @@
                 <a href="{{ route('user.index') }}" class="nav-link {{ Request::is(['user', 'user/*']) ? 'active' : '' }}">
                     <i class="fas fa-user"></i> Users
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('file.index') }}" class="nav-link {{ Request::is(['file', 'file/*']) ? 'active' : '' }}">
+                    <i class="fas fa-images"></i> FileList
+                </a>
             </li>
         </ul>
     </nav>
 </div>
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>

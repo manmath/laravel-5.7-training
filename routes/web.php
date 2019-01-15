@@ -26,6 +26,8 @@ Route::prefix('user')->group(function () {
     Route::get('/create', 'UserController@create')->name('user.create');
 });
 
-
-Route::get('/upload-file', 'UploadFileController@index');
-Route::post('/upload-file/upload', 'UploadFileController@upload')->name('file.upload');
+Route::prefix('file')->group(function () {
+    Route::get('/', 'FileController@index')->name('file.index');
+    Route::get('/upload', 'FileController@create')->name('file.create');
+    Route::post('/store', 'FileController@store')->name('file.upload');
+});

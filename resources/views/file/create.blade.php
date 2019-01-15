@@ -5,26 +5,24 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Create Department') }}</div>
+                    <div class="card-header">Upload new file</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('department.store') }}">
+                        <form method="post" action="{{ route('file.upload') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Upload</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                                    @if ($errors->has('name'))
+                                    <input type="file" class="form-control{{ $errors->has('fileUpload') ? ' is-invalid' : '' }}" name="fileUpload">
+                                    @if ($errors->has('fileUpload'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('fileUpload') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Create') }}
-                                    </button>
+                                    <button type="submit" class="btn btn-primary">Upload</button>
                                 </div>
                             </div>
                         </form>
