@@ -24,7 +24,13 @@
                                 @if ($users)
                                     @foreach($users as $user)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td>
+                                                @if ($user->photo)
+                                                    <img src="{{ asset($user->photo->absolute_path) }}" alt="{{ $user->photo->name }}" width="80">
+                                                @else
+                                                    <img src="{{ asset('uploads/dummy/user.jpg') }}" alt="" width="80">
+                                                @endif
+                                            </td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
@@ -34,6 +40,11 @@
                                     @endforeach
                                 @endif
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="4">{{ $users->links() }}</td>
+                                </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

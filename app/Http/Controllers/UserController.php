@@ -8,7 +8,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(2);
+        $users = [
+            'all' => [
+                'total' => 20
+            ],
+            'province' => [
+                'phnom penh' => [
+
+                ],
+                'kandal' => [
+
+                ]
+            ]
+        ];
+        echo json_encode($users);
         return view('user.index', ['users' => $users]);
     }
 
